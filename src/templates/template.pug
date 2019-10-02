@@ -1,0 +1,46 @@
+doctype html
+
+html(lang=en)
+    head
+        meta(charset="UTF-8")
+        meta(content="width=device-width, initial-scale=1" name="viewport")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        title Friends Filter
+        script(src="http://vk.com/js/api/openapi.js")
+    body
+        .wrapper#friends_main
+            .container
+                .container__preheader
+                    .container__title Другофильтр
+                    .container__figure
+                .friends
+                    header.friends__header
+                        h1.friends__title Выберите друзей
+                        a.friends__taskbar-closebtn.closebtn#remove-store(href="#")
+                    .friends__taskbar
+                        input.friends__taskbar-input#left-search(type="text" placeholder="Начните вводить имя друга")
+                        input.friends__taskbar-input#right-search(type="text" placeholder="Начните вводить имя друга")
+                    .friends__titles
+                            .friends__left-title Ваши друзья
+                            .friends__right-title Друзья в списке
+                    main.friends__main                        
+                        .friends__left
+                            ul.friends__left-container#left-container
+                                .friends__friend
+                                    .friends__friend-img
+                                    .friends__friend-name У тебя нет друзей
+                                    a.friends__friend-btn.plusbtn(href="#")
+                        .friends__right
+                            ul.friends__right-container#right-container
+                    footer.friends__footer
+                        a.friends__footer-save#save-btn(href="#") Сохранить
+        script#friend-template(type="text/friend-template")
+            li.friends__friend
+                .friends__friend-img
+                .friends__friend-name
+                a.friends__friend-btn.plusbtn(href="#")
+        script#friend-moved-template(type="text/friend-template")
+            li.friends__friend
+                .friends__friend-img
+                .friends__friend-name
+                a.friends__friend-removebtn.closebtn(href="#")   
